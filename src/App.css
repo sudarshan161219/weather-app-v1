@@ -1,38 +1,283 @@
-.App {
-  text-align: center;
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500&display=swap');
+
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed, 
+figure, figcaption, footer, header, hgroup, 
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	font: inherit;
+	vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure, 
+footer, header, hgroup, menu, nav, section {
+	display: block;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+ol, ul {
+	list-style: none;
+}
+blockquote, q {
+	quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+	content: '';
+	content: none;
+}
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+body {
+	line-height: 1;
+	font-family: 'Poppins', sans-serif;
+	background-color: #f9f9f9;
+	color: rgb(10, 10, 10);
+	margin: 1rem 0.5rem;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+.nav {
+    align-items: center;
+    display: flex;
+    position: relative;
+	padding-bottom: 1rem;
+}
+.nav-icon {
+    position: absolute;
+    left: 111px;
+    top: -20px;
+    width: 3rem;
+}
+.nav-heading{
+	letter-spacing: 1.1px;
+	font-weight: 500;
+	font-size: 1.5rem;
 }
 
-.App-link {
-  color: #61dafb;
+.form{
+	position: relative;
+    align-items: center;
+    display: flex;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.Celsius-icon{
+	visibility: hidden;
+	transition: cubic-bezier(0.175, 0.885, 0.32, 1.275) 0.4s;
+}
+
+.show-Celsius-icon{
+	visibility: visible;
+	transition: cubic-bezier(0.175, 0.885, 0.32, 1.275) 0.4s;
+}
+
+.input{
+padding: 6px 3.5rem;
+/* background: rgb(31, 32, 35); */
+border: none;
+box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+border-radius: 4px;
+font-size: 13px;
+font-size: 1.2rem;
+font-weight: 300;
+letter-spacing: 1.1px;
+color: rgb(25, 26, 26);
+height: 46px;
+appearance: none;
+transition: border 0.15s ease 0s;
+width: 100%;
+max-width: 450px;
+}
+
+.input::placeholder{
+	font-size: 1rem;
+	font-weight: 300
+}
+.input:focus{
+outline: none;
+}
+
+
+
+.search-icon{
+	position: absolute;
+	visibility: hidden;
+	transition: cubic-bezier(0.175, 0.885, 0.32, 1.275) 0.4s;
+}
+
+
+.show-search-icon{
+	visibility: visible;
+	margin-left: 1rem;
+    color: rgb(86, 90, 90);
+	position: absolute;
+	font-size: 1.5rem;
+	transition: cubic-bezier(0.175, 0.885, 0.32, 1.275) 0.3s;
+}
+
+.search-icon:hover{
+	transition: cubic-bezier(0.175, 0.885, 0.32, 1.275) 0.4s;
+	transform: scale(1.1);
+}
+
+.search-icon:active{
+	transform: scale(0.99);
+	color: rgb(24, 226, 125);
+}
+
+
+.boxes {
+	top: 240px;
+	margin: 5rem auto;
+	--size: 32px;
+	--duration: 800ms;
+	height: calc(var(--size) * 2);
+	width: calc(var(--size) * 3);
+	position: relative;
+	transform-style: preserve-3d;
+	transform-origin: 50% 50%;
+	margin-top: calc(var(--size) * 1.5 * -1);
+	transform: rotateX(60deg) rotateZ(45deg) rotateY(0deg) translateZ(0px);
+}
+.boxes .box {
+	width: var(--size);
+	height: var(--size);
+	top: 0;
+	left: 0;
+	position: absolute;
+	transform-style: preserve-3d;
+}
+.boxes .box:nth-child(1) {
+	transform: translate(100%, 0);
+	animation: box1 var(--duration) linear infinite;
+}
+.boxes .box:nth-child(2) {
+	transform: translate(0, 100%);
+	animation: box2 var(--duration) linear infinite;
+}
+.boxes .box:nth-child(3) {
+	transform: translate(100%, 100%);
+	animation: box3 var(--duration) linear infinite;
+}
+.boxes .box:nth-child(4) {
+	transform: translate(200%, 0);
+	animation: box4 var(--duration) linear infinite;
+}
+.boxes .box > div {
+	--background: #5c8df6;
+	--top: auto;
+	--right: auto;
+	--bottom: auto;
+	--left: auto;
+	--translateZ: calc(var(--size) / 2);
+	--rotateY: 0deg;
+	--rotateX: 0deg;
+	position: absolute;
+	width: 100%;
+	height: 100%;
+	background: var(--background);
+	top: var(--top);
+	right: var(--right);
+	bottom: var(--bottom);
+	left: var(--left);
+	transform: rotateY(var(--rotateY)) rotateX(var(--rotateX)) translateZ(var(--translateZ));
+}
+.boxes .box > div:nth-child(1) {
+	--top: 0;
+	--left: 0;
+}
+.boxes .box > div:nth-child(2) {
+	--background: #145af2;
+	--right: 0;
+	--rotateY: 90deg;
+}
+.boxes .box > div:nth-child(3) {
+	--background: #447cf5;
+	--rotateX: -90deg;
+}
+.boxes .box > div:nth-child(4) {
+	--background: #dbe3f4;
+	--top: 0;
+	--left: 0;
+	--translateZ: calc(var(--size) * 3 * -1);
+}
+@keyframes box1 {
+	0%, 50% {
+		transform: translate(100%, 0);
+   }
+	100% {
+		transform: translate(200%, 0);
+   }
+}
+@keyframes box2 {
+	0% {
+		transform: translate(0, 100%);
+   }
+	50% {
+		transform: translate(0, 0);
+   }
+	100% {
+		transform: translate(100%, 0);
+   }
+}
+@keyframes box3 {
+	0%, 50% {
+		transform: translate(100%, 100%);
+   }
+	100% {
+		transform: translate(0, 100%);
+   }
+}
+@keyframes box4 {
+	0% {
+		transform: translate(200%, 0);
+   }
+	50% {
+		transform: translate(200%, 100%);
+   }
+	100% {
+		transform: translate(100%, 100%);
+   }
+}
+
+
+
+.cards{
+	text-align: center;
+	display: grid;
+	justify-content:center;
+	margin-top: 1.5rem;
+}
+
+.cards-heading{
+	font-size: 1.3rem;
+	letter-spacing: 1.1px;
+	text-transform: uppercase;
+}
+
+.cards-heading-two{
+	margin-top: 2rem;
+	font-size: 3rem;
+	letter-spacing: 1.1px;
+	text-transform: uppercase;
+}
+
+.cards-heading-two-span {
+    position: absolute;
+    font-size: 1.3rem;
+    font-weight: 500;
+    /* top: -25px; */
 }
