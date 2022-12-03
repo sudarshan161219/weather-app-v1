@@ -1,5 +1,4 @@
 import React from 'react'
-import {WiCloudyGusts} from 'react-icons/wi'
 import gif from './images/ezgif.com-gif-maker.gif'
 
 
