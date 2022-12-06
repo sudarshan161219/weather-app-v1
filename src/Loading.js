@@ -1,11 +1,36 @@
-import React from 'react';
+import React from 'react'
 
-const Loading = () => {
-  return (
-<div className='spinner-box'>
-  <span className="loader"></span>
-</div>
-  );
-};
+const Intro = () => {
 
-export default Loading;
+    
+      return (
+        <div className="boxes">
+        <div className="box">
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+        </div>
+        <div className="box">
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+        </div>
+        <div className="box">
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+        </div>
+        <div className="box">
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+        </div>
+    </div>
+      );
+    };
+    
+ export default  Intro;

@@ -3,15 +3,13 @@ import './App.css';
 import Header from './header';
 import Search from './search'
 import InfoDS from './dsinfo'
-import Intro from './intro';
+import Loading from './Loading';
 
 
 
 function App() {
 const [api, setApi] = useState({
-location:{
-
-}, 
+location:'', 
 current_observation:{
 astronomy:'',
 atmosphere:'',
@@ -21,7 +19,7 @@ wind:'',
 forecasts:[]
 })
 
-
+  const [loading, setLoading] = useState(true)
   const [input, setInput] = useState('')
   const [click, setClick] = useState(false)
   const inputRef = useRef()
@@ -47,16 +45,27 @@ const info = await response.json()
  setApi(info)
  setClick(false)
  }
+ 
+ setLoading(false)
 
   } catch(error){
 console.log(error)
-  }
-  
+setLoading(false)
 
   }
- 
+
+  }
     fetchInfo()
-},[click, query])
+},[click, query, api])
+
+
+// if(input === ''){
+//   return(
+//     <main>
+//      <Intro/>
+//     </main>
+//   )
+// }
 
 
   return (
@@ -68,8 +77,8 @@ console.log(error)
       input={input}
       setClickk={setClick}
       />
-    { click  ?  <Intro /> : <InfoDS Api={api}/> }
-
+    {/* { click ?  'h': <InfoDS Api={api}/>  } */}
+{input === '' ? 'heloo' : (click ?  <Loading /> : <InfoDS Api={api}/>) }
     </div>
   );
 }

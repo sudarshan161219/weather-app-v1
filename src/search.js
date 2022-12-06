@@ -14,8 +14,8 @@ const fetch = () =>{
 
 
     return (
-        // <div className='main-div'>
-        <form  onSubmit={handleSubmit} className='form webflow-style-input'> 
+        <div className='main-div'>
+         <form  onSubmit={handleSubmit} className='form webflow-style-input'> 
       <AiOutlineSearch  
       className={input !== '' ?'show-search-icon' : 'search-icon'}
       onClick={fetch}
@@ -30,7 +30,7 @@ const fetch = () =>{
         >  
         </input>
       </form>
-    //   </div>
+       </div>
     );
   };
   
