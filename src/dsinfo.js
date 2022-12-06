@@ -1,6 +1,4 @@
 import React from 'react'
-import {WiCelsius} from 'react-icons/wi'
-import pic from './images/philipp-pilz-AOhBMkQlzgM-unsplash.jpg'
 import Card from './Card'
 
  
@@ -14,7 +12,7 @@ const InfoDS = ({ Api, click, input}) => {
       return (
   
  <article className="cards-section">
-  <Card {...Api.location} click={click} input={input}/>
+  <Card {...Api.location} {...Api.current_observation.condition} click={click} input={input}/>
 </article> 
 
 

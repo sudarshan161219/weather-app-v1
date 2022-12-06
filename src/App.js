@@ -19,7 +19,7 @@ wind:'',
 forecasts:[]
 })
 
-  const [loading, setLoading] = useState(true)
+
   const [input, setInput] = useState('')
   const [click, setClick] = useState(false)
   const inputRef = useRef()
@@ -42,31 +42,21 @@ forecasts:[]
 if(click){
  const response = await fetch(`https://yahoo-weather5.p.rapidapi.com/weather?location=${query}&format=json&u=c`, options)
 const info = await response.json()
- setApi(info)
+setApi(info)
  setClick(false)
  }
- 
- setLoading(false)
 
   } catch(error){
-console.log(error)
-setLoading(false)
-
+  console.log(error)
   }
 
   }
     fetchInfo()
-},[click, query, api])
+},[ click, input, query])
 
 
-// if(input === ''){
-//   return(
-//     <main>
-//      <Intro/>
-//     </main>
-//   )
-// }
 
+console.log(api)
 
   return (
     <div className="App">
@@ -77,8 +67,9 @@ setLoading(false)
       input={input}
       setClickk={setClick}
       />
-    {/* { click ?  'h': <InfoDS Api={api}/>  } */}
-{input === '' ? 'heloo' : (click ?  <Loading /> : <InfoDS Api={api}/>) }
+      {/* <InfoDS Api={api}/> */}
+      {/* {click && <InfoDS Api={api}/>} */}
+{click ?  <Loading /> : <InfoDS Api={api}/> }
     </div>
   );
 }
