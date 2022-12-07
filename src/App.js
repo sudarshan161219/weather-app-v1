@@ -56,7 +56,7 @@ setApi(info)
 
 
 
-console.log(api)
+
 
   return (
     <div className="App">
@@ -67,9 +67,8 @@ console.log(api)
       input={input}
       setClickk={setClick}
       />
-      {/* <InfoDS Api={api}/> */}
-      {/* {click && <InfoDS Api={api}/>} */}
-{click ?  <Loading /> : <InfoDS Api={api}/> }
+
+{click ?  <Loading /> :  <InfoDS Api={api}/> }
     </div>
   );
 }

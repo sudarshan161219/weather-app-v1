@@ -302,9 +302,8 @@ outline: none;
 
 .show-card-container{
 	display: grid;
-	gap: 30px;
 	width: 300px;
-		padding: 1rem;
+		/* padding: 1rem; */
 		text-overflow: clip;
 		overflow: hidden;
 		box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
@@ -332,5 +331,7 @@ img{
 
 .info-container{
 margin: 1rem;
-
+display: grid;
+gap: 10px;
+text-align: left;
 }
