@@ -8,23 +8,9 @@ import drizzly from './images/drizzle.gif'
 import rain from './images/rain.gif'
 import sleet from './images/hailstone.gif'
 import stroms from './images/storm.gif'
+import loc from './images/location.gif'
 
 const InfoDS = ({ city, country, lat, long, region, timezone_id, woeid, code, text, temperature}) => {
-
-// const [color, setColor] = useState({
-//     Cloudy: '#5F6F94',
-//   PartlyCloudy: '#9CB4CC',
-//   Clear: '#B9FFFC',
-//   Haze: '#D2DAFF',
-//   Showers: '#5584AC',
-// })
-// const color =({
-//  Cloudy: cloudy,
-// PartlyCloudy: PartlyCloudy,
-// Clear: Sunny,
-// Haze: haze,
-// Showers: '#5584AC',
-// })
 
 let imageURL = ""
 
@@ -75,42 +61,38 @@ switch (text) {
               case 'Thunderstorms':
                 imageURL = stroms
                 break;
-  
   default:
     break;
 }
 
-// if(text === 'Mostly Cloudy' || 'Cloudy' ){
-//     imageURL = cloudy
-// }
-// if(text === 'Partly Cloudy'){
-//   imageURL = PartlyCloudy
-// }
-// if(text === 'Haze'){
-//   imageURL = haze
-// }
-// if(text === 'Clear' || 'Sunny'){
-//   imageURL = Sunny
-// }
 
       return (   
   
- <article className="cards">
-    <div className={city ? 'show-card-container':'card-container'} >
+ <article className={city ? "show-cards" : "cards"}>
+    <div className='first-card-container'>
       <div className='img-container'>
-<img src={imageURL } alt='img' />
+        <img src={imageURL } alt='img' />
       </div>
-  <div className='info-container'>
-<h1 className='cards-heading'>{city}</h1>
-<p className='cards-para'>country: {country}</p>
-<p className='cards-para'>region: {region}</p>
-<p className='cards-para'>lat: {lat}</p>
-<p className='cards-para'>long: {long}</p>
-<p className='cards-para'>timezone: {timezone_id}</p>
-<p>{temperature}<WiCelsius className={temperature ?  'show-Celsius-icon' : 'Celsius-icon'}/></p>
-<p>{text}</p>
+<div className='info-container'>
+{/* <h2 className='cards-heading'></h2> */}
+<ul className='cards-info'>
+  <li className='temp' >{temperature}<WiCelsius className={temperature ?  'show-Celsius-icon' : 'Celsius-icon'}/></li>
+  <li className='weth-condition'>{text}</li>
+</ul>
+
+<ul className='cards-info-2'>
+  <li>{text}</li>
+  <li className='location-li'> 
+  <img className='li-img' src={loc} alt='location'/> 
+  <p>{city}</p>
+  </li>
+</ul>
   </div>
-    </div>
+ </div>
+
+   <div className='second-card-container'> 
+
+   </div> 
   </article> 
 
 

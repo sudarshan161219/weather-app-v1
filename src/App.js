@@ -34,8 +34,10 @@ forecasts:[]
       const options = {
         method: 'GET',
         headers: {
-          'X-RapidAPI-Key': 'ccd9373daemsh7061f859180eaa5p146e05jsn84328b527c57',
-          'X-RapidAPI-Host': 'yahoo-weather5.p.rapidapi.com'
+          // 'X-RapidAPI-Key': 'ccd9373daemsh7061f859180eaa5p146e05jsn84328b527c57',
+          // 'X-RapidAPI-Host': 'yahoo-weather5.p.rapidapi.com'
+          "X-RapidAPI-Key": "429010167fmshf5f0acfec46f097p1f83fbjsn13a5dc3ceaf9",
+		"X-RapidAPI-Host": "yahoo-weather5.p.rapidapi.com"
         }
       };
       
@@ -56,7 +58,7 @@ setApi(info)
 
 
 
-
+console.log(api)
 
   return (
     <div className="App">
