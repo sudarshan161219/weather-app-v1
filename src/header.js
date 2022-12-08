@@ -1,5 +1,5 @@
 import React from 'react'
-import gif from './images/ezgif.com-gif-maker.gif'
+import gif from './images/weathercock.gif'
 
 
 const Header = () => {

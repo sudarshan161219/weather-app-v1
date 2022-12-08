@@ -1,7 +1,13 @@
 import React from 'react'
 import {WiCelsius} from 'react-icons/wi'
-import pic from './images/ezgif.com-gif-maker.gif'
-import cloudy from './images/cloudy.gif'
+import Sunny from './images/sun.gif'
+import cloudy from './images/clouds.gif'
+import haze from './images/foggy (1).gif'
+import PartlyClear from './images/cloudy.gif'
+import drizzly from './images/drizzle.gif'
+import rain from './images/rain.gif'
+import sleet from './images/hailstone.gif'
+import stroms from './images/storm.gif'
 
 const InfoDS = ({ city, country, lat, long, region, timezone_id, woeid, code, text, temperature}) => {
 
@@ -12,31 +18,82 @@ const InfoDS = ({ city, country, lat, long, region, timezone_id, woeid, code, te
 //   Haze: '#D2DAFF',
 //   Showers: '#5584AC',
 // })
-const color =({
- Cloudy: cloudy,
-PartlyCloudy: pic,
-Clear: '#B9FFFC',
-Haze: '#D2DAFF',
-Showers: '#5584AC',
-})
+// const color =({
+//  Cloudy: cloudy,
+// PartlyCloudy: PartlyCloudy,
+// Clear: Sunny,
+// Haze: haze,
+// Showers: '#5584AC',
+// })
 
 let imageURL = ""
 
+switch (text) {
+   case 'Mostly Cloudy':
+   imageURL = cloudy
+   break;
 
+    case 'Cloudy':
+    imageURL = cloudy
+    break;  
 
-  if(text === 'Mostly Cloudy' && 'Partly Cloudy'){
-    imageURL = color.Cloudy
-}else if(text === 'Cloudy'){
-  imageURL = color.Cloudy
+    case 'Partly Cloudy':
+    imageURL = cloudy
+    break; 
+
+    case 'Haze':
+    imageURL = haze
+    break;
+
+    case 'Clear':
+      imageURL = Sunny
+      break;
+
+      case 'Mostly Clear':
+      imageURL = PartlyClear
+      break;
+
+      case 'Sunny':
+        imageURL = Sunny
+        break;
+
+        case 'Mostly Sunny':
+          imageURL = PartlyClear
+          break;
+    
+          case 'Showers':
+          imageURL = drizzly
+          break;
+
+          case 'Rain':
+            imageURL = rain
+            break;
+
+            case 'Sleet':
+              imageURL = sleet
+              break;
+              case 'Thunderstorms':
+                imageURL = stroms
+                break;
+  
+  default:
+    break;
 }
 
-// else{
-//   imageURL = color.PartlyCloudy
+// if(text === 'Mostly Cloudy' || 'Cloudy' ){
+//     imageURL = cloudy
+// }
+// if(text === 'Partly Cloudy'){
+//   imageURL = PartlyCloudy
+// }
+// if(text === 'Haze'){
+//   imageURL = haze
+// }
+// if(text === 'Clear' || 'Sunny'){
+//   imageURL = Sunny
 // }
 
-
-
-      return (
+      return (   
   
  <article className="cards">
     <div className={city ? 'show-card-container':'card-container'} >
@@ -54,10 +111,7 @@ let imageURL = ""
 <p>{text}</p>
   </div>
     </div>
-
-
-
-    </article> 
+  </article> 
 
 
 
