@@ -9,8 +9,9 @@ import rain from './images/rain.gif'
 import sleet from './images/hailstone.gif'
 import stroms from './images/storm.gif'
 import loc from './images/location.gif'
+import mist from './images/mist.svg'
 
-const InfoDS = ({ city, country, lat, long, region, timezone_id, woeid, code, text, temperature}) => {
+const InfoDS = ({ name,text, temp_c}) => {
 
 let imageURL = ""
 
@@ -30,6 +31,10 @@ switch (text) {
     case 'Haze':
     imageURL = haze
     break;
+
+    case 'Mist':
+      imageURL = mist
+      break;
 
     case 'Clear':
       imageURL = Sunny
@@ -68,7 +73,7 @@ switch (text) {
 
       return (   
   
- <article className={city ? "show-cards" : "cards"}>
+ <article className={name ? "show-cards" : "cards"}>
     <div className='first-card-container'>
       <div className='img-container'>
         <img src={imageURL } alt='img' />
@@ -76,15 +81,15 @@ switch (text) {
 <div className='info-container'>
 {/* <h2 className='cards-heading'></h2> */}
 <ul className='cards-info'>
-  <li className='temp' >{temperature}<WiCelsius className={temperature ?  'show-Celsius-icon' : 'Celsius-icon'}/></li>
+  <li className='temp' >{temp_c}<WiCelsius className={temp_c ?  'show-Celsius-icon' : 'Celsius-icon'}/></li>
   <li className='weth-condition'>{text}</li>
 </ul>
 
 <ul className='cards-info-2'>
-  <li>{text}</li>
+  {/* <li>{text}</li> */}
   <li className='location-li'> 
   <img className='li-img' src={loc} alt='location'/> 
-  <p>{city}</p>
+  <p>{name}</p>
   </li>
 </ul>
   </div>

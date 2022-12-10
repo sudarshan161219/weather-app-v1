@@ -12,7 +12,14 @@ const InfoDS = ({ Api, click, input}) => {
       return (
   
  <article className="cards-section">
-  <Card {...Api.location} {...Api.current_observation.condition} click={click} input={input}/>
+  <Card 
+  {...Api.location} 
+  {...Api.current} 
+  {...Api.current.condition}
+  click={click} 
+  input={input}
+
+  />
 </article> 
 
 

@@ -9,14 +9,13 @@ import Loading from './Loading';
 
 function App() {
 const [api, setApi] = useState({
-location:'', 
-current_observation:{
-astronomy:'',
-atmosphere:'',
-condition:'',
-wind:'',
- }, 
-forecasts:[]
+  location: {
+
+  },
+   current: {
+air_quality:{},
+condition:{}
+   }
 })
 
 
@@ -31,18 +30,8 @@ forecasts:[]
 
     try{
   
-      const options = {
-        method: 'GET',
-        headers: {
-          // 'X-RapidAPI-Key': 'ccd9373daemsh7061f859180eaa5p146e05jsn84328b527c57',
-          // 'X-RapidAPI-Host': 'yahoo-weather5.p.rapidapi.com'
-          "X-RapidAPI-Key": "429010167fmshf5f0acfec46f097p1f83fbjsn13a5dc3ceaf9",
-		"X-RapidAPI-Host": "yahoo-weather5.p.rapidapi.com"
-        }
-      };
-      
 if(click){
- const response = await fetch(`https://yahoo-weather5.p.rapidapi.com/weather?location=${query}&format=json&u=c`, options)
+ const response = await  fetch( `http://api.weatherapi.com/v1/current.json?key=d6f8c23cf7664a70b8b154605221012&q=${query}&aqi=yes`)
 const info = await response.json()
 setApi(info)
  setClick(false)
@@ -57,8 +46,6 @@ setApi(info)
 },[ click, input, query])
 
 
-
-console.log(api)
 
   return (
     <div className="App">
