@@ -48,11 +48,11 @@ switch (text) {
         imageURL = Sunny
         break;
 
-        case 'Mostly Sunny':
+        case 'Mostly Sunny'  && 'Overcast':
           imageURL = PartlyClear
           break;
     
-          case 'Showers':
+          case 'Showers' && 'Moderate rain' && 'Light rain shower':
           imageURL = drizzly
           break;
 
@@ -63,6 +63,8 @@ switch (text) {
             case 'Sleet':
               imageURL = sleet
               break;
+
+
               case 'Thunderstorms':
                 imageURL = stroms
                 break;

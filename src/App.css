@@ -88,15 +88,6 @@ body {
     display: flex;
 }
 
-.Celsius-icon{
-	visibility: hidden;
-	transition: cubic-bezier(0.175, 0.885, 0.32, 1.275) 0.4s;
-}
-
-.show-Celsius-icon{
-	visibility: visible;
-	transition: cubic-bezier(0.175, 0.885, 0.32, 1.275) 0.4s;
-}
 
 .input{
 padding: 6px 3.5rem;
@@ -360,6 +351,17 @@ gap: 100px;
     font-size: 5rem;
 	letter-spacing: 1.1px;
     text-transform: capitalize;
+	position: relative;
+}
+.Celsius-icon{
+	visibility: hidden;
+}
+
+.show-Celsius-icon {
+    visibility: visible;
+    position: absolute;
+    top: -46px;
+    left: 156px;
 }
 
 .weth-condition{
@@ -370,6 +372,7 @@ gap: 100px;
     justify-content: center;
     display: flex;
     align-items: center;
+	position: relative;
 }
 .location-li p{
 	text-decoration: underline;
@@ -377,7 +380,7 @@ gap: 100px;
 
 .li-img{
 	margin-right: 0.7rem;
-	width: 30px;
+	width: 28px;
 }
 
 @media (min-width:500px) {
