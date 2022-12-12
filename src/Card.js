@@ -5,15 +5,24 @@ import cloudy from './images/clouds.gif'
 import haze from './images/foggy (1).gif'
 import PartlyClear from './images/cloudy.gif'
 import drizzly from './images/drizzle.gif'
-import rain from './images/rain.gif'
+import Rain from './images/rain.gif'
 import sleet from './images/hailstone.gif'
 import stroms from './images/storm.gif'
 import loc from './images/location.gif'
 import mist from './images/mist.svg'
+// import clear from './weather-animations/clear.gif'
+// import clouds from './weather-animations/clouds.gif'
+// import fog from './weather-animations/fog.gif'
+// import rain from './weather-animations/rain.gif'
+// import snow from './weather-animations/snow.gif'
+// import thunderstorm from './weather-animations/thunderstorm.gif'
 
 const InfoDS = ({ name,text, temp_c}) => {
 
 let imageURL = ""
+// let bodyImg = document.body.style.backgroundImage
+
+
 
 switch (text) {
    case 'Mostly Cloudy':
@@ -24,8 +33,9 @@ switch (text) {
     imageURL = cloudy
     break;  
 
-    case 'Partly Cloudy':
+    case 'Partly Cloudy' && 'Partly cloudy':
     imageURL = cloudy
+   
     break; 
 
     case 'Haze':
@@ -57,10 +67,10 @@ switch (text) {
           break;
 
           case 'Rain':
-            imageURL = rain
+            imageURL = Rain
             break;
 
-            case 'Sleet':
+            case 'Sleet' && 'Light sleet':
               imageURL = sleet
               break;
 
@@ -75,7 +85,7 @@ switch (text) {
 
       return (   
   
- <article className={name ? "show-cards" : "cards"}>
+ <article  className={name ? "show-cards" : "cards"}>
     <div className='first-card-container'>
       <div className='img-container'>
         <img src={imageURL } alt='img' />

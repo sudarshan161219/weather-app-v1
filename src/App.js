@@ -15,6 +15,9 @@ const [api, setApi] = useState({
    current: {
 air_quality:{},
 condition:{}
+   },
+   forecast:{
+
    }
 })
 
@@ -31,8 +34,8 @@ condition:{}
     try{
   
 if(click){
+ const response = await  fetch( `https://api.weatherapi.com/v1/forecast.json?key=d6f8c23cf7664a70b8b154605221012&q=${query}&days=5&aqi=yes&alerts=yes`)
 
- const response = await  fetch( ` https://api.weatherapi.com/v1/current.json?key=d6f8c23cf7664a70b8b154605221012&q=${query}&aqi=yes`)
 const info = await response.json()
 setApi(info)
  setClick(false)
@@ -45,7 +48,6 @@ setApi(info)
   }
     fetchInfo()
 },[ click, input, query])
-
 
 
 
