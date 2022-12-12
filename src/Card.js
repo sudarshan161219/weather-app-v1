@@ -17,7 +17,7 @@ import mist from './images/mist.svg'
 // import snow from './weather-animations/snow.gif'
 // import thunderstorm from './weather-animations/thunderstorm.gif'
 
-const InfoDS = ({ name,text, temp_c}) => {
+const InfoDS = ({ name,text, temp_c, pressure_mb, humidity}) => {
 
 let imageURL = ""
 // let bodyImg = document.body.style.backgroundImage
@@ -82,6 +82,7 @@ switch (text) {
     break;
 }
 
+// console.log(forecastday)
 
       return (   
   
@@ -94,6 +95,7 @@ switch (text) {
 {/* <h2 className='cards-heading'></h2> */}
 <ul className='cards-info'>
   <li className='temp' >{temp_c}<WiCelsius className={temp_c ?  'show-Celsius-icon' : 'Celsius-icon'}/></li>
+  <li>pressure: {pressure_mb} || humidity: {humidity}</li>
   <li className='weth-condition'>{text}</li>
 </ul>
 
@@ -107,9 +109,16 @@ switch (text) {
   </div>
  </div>
 
-   <div className='second-card-container'> 
-
-   </div> 
+   {/* <div className='second-card-container'> 
+   {forecastday.foreach((item, i) =>{
+    return(
+      <h1>{item.astro.sunrise}</h1>
+    )
+   })}
+<div className='box-one'></div>
+<div className='box-two'></div>
+<div className='box-three'></div>
+   </div>  */}
   </article> 
 
 

@@ -17,7 +17,9 @@ air_quality:{},
 condition:{}
    },
    forecast:{
+    forecastday:[
 
+    ]
    }
 })
 
@@ -49,10 +51,10 @@ setApi(info)
     fetchInfo()
 },[ click, input, query])
 
-
+console.log(api)
 
   return (
-    <div className="App">
+    <div className="App"> 
       <Header/>
       <Search
       search={setInput}
