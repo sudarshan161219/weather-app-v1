@@ -23,6 +23,7 @@ condition:{}
    }
 })
 
+console.log(api)
 
   const [input, setInput] = useState('')
   const [click, setClick] = useState(false)

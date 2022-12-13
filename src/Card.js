@@ -10,20 +10,11 @@ import sleet from './images/hailstone.gif'
 import stroms from './images/storm.gif'
 import loc from './images/location.gif'
 import mist from './images/mist.svg'
-// import clear from './weather-animations/clear.gif'
-// import clouds from './weather-animations/clouds.gif'
-// import fog from './weather-animations/fog.gif'
-// import rain from './weather-animations/rain.gif'
-// import snow from './weather-animations/snow.gif'
-// import thunderstorm from './weather-animations/thunderstorm.gif'
 
 const InfoDS = ({ name,text, temp_c, pressure_mb, humidity}) => {
 
 let imageURL = ""
 // let bodyImg = document.body.style.backgroundImage
-
-
-
 switch (text) {
    case 'Mostly Cloudy':
    imageURL = cloudy
@@ -89,7 +80,7 @@ switch (text) {
  <article  className={name ? "show-cards" : "cards"}>
     <div className='first-card-container'>
       <div className='img-container'>
-        <img src={imageURL } alt='img' />
+        <img className='card-img'  src={imageURL } alt='img' />
       </div>
 <div className='info-container'>
 {/* <h2 className='cards-heading'></h2> */}
