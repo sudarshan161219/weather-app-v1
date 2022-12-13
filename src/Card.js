@@ -100,16 +100,6 @@ switch (text) {
   </div>
  </div>
 
-   {/* <div className='second-card-container'> 
-   {forecastday.foreach((item, i) =>{
-    return(
-      <h1>{item.astro.sunrise}</h1>
-    )
-   })}
-<div className='box-one'></div>
-<div className='box-two'></div>
-<div className='box-three'></div>
-   </div>  */}
   </article> 
 
 

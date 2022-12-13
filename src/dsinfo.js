@@ -1,6 +1,7 @@
 import React from 'react'
 import Card from './Card'
 import CardTwo from './CardTwo';
+
  
 
 const InfoDS = ({ Api, click, input}) => {
@@ -16,11 +17,13 @@ const InfoDS = ({ Api, click, input}) => {
   click={click} 
   input={input}
   />
+
 {Api.forecast.forecastday.map((item, index) =>{
   return(
       <CardTwo {...item} key={index} />
   )
 })}
+
 
 </article> 
       );

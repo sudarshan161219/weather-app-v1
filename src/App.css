@@ -387,11 +387,39 @@ gap: 100px;
 
 
 .foreCast-card{
+	display: grid;
+	gap: 1rem;
+	width: 250px;
 	box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
     padding: 1rem;
-    height: 200px;
+    height: 240px;
+    /* color: gray; */
 }
 
+
+.foreCast-card  img{
+	width: 100px;
+}
+
+
+.foreCast-card-heading__img{
+	display: grid;
+	justify-content: center;
+}
+
+.foreCast-card-list{
+	letter-spacing: 1px;
+	display: grid;
+    gap: 6px;
+    color: gray;
+    font-size: 0.9rem;
+}
+
+.foreCast-card p{
+	text-transform: uppercase;
+	font-size: 1.2rem;
+	padding-bottom: 0.3rem;
+}
 @media (min-width:500px) {
 	.info-container{
 		margin: 1rem;
