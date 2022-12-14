@@ -10,6 +10,8 @@ import sleet from './images/sleet.svg'
 import stroms from './images/thunderstorms.svg'
 import Patchyrain from './images/partly-cloudy-day-rain.svg'
 
+
+
 const CardTwo = ({date, astro, day}) => {
 
   const weekday = ["Sun","Mon","Tue","Wed","Thu","Fri","Sat"];
@@ -19,62 +21,76 @@ let today = weekday[d.getDay()];
 
 const text = day.condition.text
 
-let imageURL = ""
-
 console.log(text)
+
+let imageURL = ""
 switch (text) {
    case 'Mostly Cloudy':
    imageURL = cloudy
    break;
 
     case 'Cloudy':
+      // #748DA6
     imageURL = cloudy
     break;  
 
     case 'Partly Cloudy' && 'Partly cloudy':
+      // #B2C8DF
     imageURL = cloudy
    
     break; 
 
     case 'Haze':
+      // #93B5C6
     imageURL = haze
     break;
 
     case 'Mist':
+      // #D7EAEA
       imageURL = mist
       break;
 
     case 'Clear':
+      // #A0E4F1
       imageURL = Sunny
       break;
 
       case 'Mostly Clear':
+        // #A6FFF2
       imageURL = PartlyClear
       break;
 
       case 'Sunny':
+
+        // #FAEAB1
         imageURL = Sunny
         break;
 
         case 'Mostly Sunny'  && 'Overcast':
+          // #E8F3D6
           imageURL = PartlyClear
           break;
     
           case 'Showers' && 'Light rain shower':
+            // #D2E4F1
           imageURL = drizzly
           break;
 
           case  'Moderate rain':
+            // #8FACC0
           imageURL = drizzly
           break;
 
-          case 'Rain':
+          case 'Rain' &&  'Heavy rain':
+            // #818D97
             imageURL = Rain
             break;
+
 
             case 'Sleet' && 'Light sleet':
               imageURL = sleet
               break;
+
  case 'Patchy rain possible':
   imageURL = Patchyrain
   break;
@@ -88,36 +104,13 @@ switch (text) {
 
   return (
     
-    <div className='foreCast-card' >
-      <div className='foreCast-card-heading__img'  >       
-        <h3>{today}, {date}</h3>  
-      <img src={imageURL}  alt={today}/>
+    <><div className='foreCast-card'>
+      <div className='foreCast-card-heading__img'>
+        <h3>{today}, {date}</h3>
+        <img src={imageURL} alt={today} />
+        <p>{day.avgtemp_c} °C</p>
       </div>
-<div>
-<p>day</p>
-  <ul  className='foreCast-card-list' >
-    <li>condition: {text}</li>
-    <li>avgtemp: {day.avgtemp_c}°C / {day.avgtemp_f}°F</li>
-    <li>maxtemp: {day.maxtemp_c}°C / {day.maxtemp_f}°F</li>
-    <li>mintemp: {day.mintemp_c}°C / {day.mintemp_f}°F</li>
-  </ul>
-</div>
-
-{/* <div>
-  <p>astro</p>
-  <ul  className='foreCast-card-list' >
-    <li>sunrise: {astro.sunrise}</li>
-    <li>sunset: {astro.sunset}</li>
-    <li>moon illumination: {astro.moon_illumination}</li>
-    <li>moon phase: {astro.moon_phase}</li>
-    <li>moonrise: {astro.moonrise}</li>
-    <li>moonset: {astro.moonset}</li>
-  </ul>
-</div> */}
-
-    </div>
-
-
+    </div></>
   )
 }
 

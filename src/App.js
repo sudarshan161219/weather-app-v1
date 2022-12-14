@@ -23,7 +23,6 @@ condition:{}
    }
 })
 
-console.log(api)
 
   const [input, setInput] = useState('')
   const [click, setClick] = useState(false)
@@ -52,7 +51,8 @@ setApi(info)
     fetchInfo()
 },[ click, input, query])
 
-console.log(api)
+// console.log(api)
+
 
   return (
     <div className="App"> 
