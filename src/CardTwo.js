@@ -9,6 +9,7 @@ import Rain from './images/rain.svg'
 import sleet from './images/sleet.svg'
 import stroms from './images/thunderstorms.svg'
 import Patchyrain from './images/partly-cloudy-day-rain.svg'
+import snow from './images/snow.svg'
 
 
 
@@ -21,7 +22,7 @@ let today = weekday[d.getDay()];
 
 const text = day.condition.text
 
-console.log(text)
+
 
 let imageURL = ""
 switch (text) {
@@ -86,6 +87,9 @@ switch (text) {
             imageURL = Rain
             break;
 
+            case  'Moderate or heavy snow showers' :
+              imageURL = snow
+              break;
 
             case 'Sleet' && 'Light sleet':
               imageURL = sleet
@@ -110,7 +114,9 @@ switch (text) {
         <img src={imageURL} alt={today} />
         <p>{day.avgtemp_c} °C</p>
       </div>
-    </div></>
+    </div>
+  
+    </>
   )
 }
 

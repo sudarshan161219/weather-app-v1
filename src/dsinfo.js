@@ -26,7 +26,9 @@ const InfoDS = ({ Api, click, input}) => {
               );
             })}
 </div>
-<HighLight />
+<HighLight
+  {...Api.current}
+/>
 
 </div>
            </article>

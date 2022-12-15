@@ -2,7 +2,7 @@ import React from 'react'
 import {WiCelsius} from 'react-icons/wi'
 import Sunny from './images/sun.gif'
 import cloudy from './images/clouds.gif'
-import haze from './images/foggy (1).gif'
+import haze from './images/foggy.gif'
 import PartlyClear from './images/cloudy.gif'
 import drizzly from './images/drizzle.gif'
 import Rain from './images/rain.gif'
@@ -64,7 +64,6 @@ switch (text) {
             case 'Sleet' && 'Light sleet':
               imageURL = sleet
               break;
-
 
               case 'Thunderstorms':
                 imageURL = stroms

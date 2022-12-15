@@ -7,6 +7,7 @@ import Loading from './Loading';
 
 
 
+
 function App() {
 const [api, setApi] = useState({
   location: {
@@ -52,7 +53,6 @@ setApi(info)
 },[ click, input, query])
 
 // console.log(api)
-
 
   return (
     <div className="App"> 

@@ -2,6 +2,7 @@ import React from 'react'
 import gif from './images/weathercock.gif'
 
 
+
 const Header = () => {
 
  return ( 
